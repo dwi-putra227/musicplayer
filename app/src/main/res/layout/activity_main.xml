@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/search_icon" />
+
+
+    <Button
+        android:id="@+id/playlist_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/playlist" />
+
+    <TextView
+        android:text="What do you feel like today"
+        android:id="@+id/heading2"
+        android:textSize="20dp"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+
+    <TextView
+        android:text="Welcome ! "
+        android:id="@+id/heading"
+        android:textSize="30dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TextView>
+
+
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:iconifiedByDefault="true"
+        android:queryHint="Search Songs"
+        android:background="#A5A1A1"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/heading" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/controlPanel"
+        android:clipToPadding="false"
+        android:layout_marginBottom="25sp"
+        android:scrollbars="vertical" />
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Playing_Song_Cardview"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        app:cardElevation="10dp"
+        android:background="#00FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        app:cardCornerRadius="20dp">
+
+
+        <ImageView
+            android:id="@+id/Playing_Song_Imageview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_launcher_background" />
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        >
+
+
+
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:id="@+id/song_title"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:text="">
+            </TextView>
+
+
+            <TextView
+                android:id="@+id/song_artist"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:layout_marginBottom="40dp"
+                android:text="">
+            </TextView>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/positive_playback_timer"
+                android:textColor="@color/black"
+                android:text="00:00"
+
+                android:textAlignment="center"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                >
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:progressBackgroundTint="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/negative_playback_timer"
+                android:textColor="@color/black"
+
+                android:text="00:00"
+                android:textAlignment="center"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                >
+            </TextView>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/reapet_button"
+
+                android:layout_width="40dp"
+                android:layout_height="34dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/repeat" />
+
+            <Button
+                android:id="@+id/previousButton"
+
+                android:layout_marginRight="20sp"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@drawable/previous"
+                />
+
+            <Button
+                android:id="@+id/pauseResumeButton"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@drawable/play"
+                />
+
+
+
+            <Button
+                android:id="@+id/nextButton"
+
+                android:layout_marginLeft="20sp"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:background="@drawable/next"
+                />
+
+
+            <Button
+                android:id="@+id/shuffleButton"
+                android:layout_width="40dp"
+
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/shuffle_off"
+                />
+
+
+        </LinearLayout>
+
+
+
+            <com.example.musicplayer.CustomVisualizerView
+                android:id="@+id/visualizerView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignBottom="@+id/recyclerView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="2dp"
+                android:background="#FFFFFF"
+                />
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+<!-- custom_notification_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="0dp">
+
+    <!-- Album Art -->
+    <ImageView
+        android:id="@+id/notification_album_art"
+        android:layout_width="70sp"
+        android:layout_height="80sp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/audioicon" />
+
+
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <!-- Title and Artist -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="600sp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="8dp">
+
+        <TextView
+            android:id="@+id/notification_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Song Title"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/notification_artist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artist"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+    </LinearLayout>
+
+    <!-- Playback Controls -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Previous Button -->
+        <ImageButton
+            android:id="@+id/notification_previous"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/previous"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:contentDescription="previous" />
+
+        <!-- Play/Pause Button -->
+        <ImageButton
+            android:id="@+id/notification_play_pause"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/play"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:contentDescription="play" />
+
+        <!-- Next Button -->
+        <ImageButton
+            android:id="@+id/notification_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/next"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:contentDescription="next" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
